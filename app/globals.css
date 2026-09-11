@@ -24,3 +24,196 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+@keyframes brainFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes brainPulse {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.2;
+  }
+
+  50% {
+    transform: scale(1.35);
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: scale(0.8);
+    opacity: 0.2;
+  }
+}
+
+.brain-float {
+  animation: brainFloat 6s ease-in-out infinite;
+}
+
+.brain-pulse {
+  transform-origin: center;
+  transform-box: fill-box;
+  animation: brainPulse 3s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brain-float,
+  .brain-pulse {
+    animation: none;
+  }
+}
+@keyframes brainPulseDelayed {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.15;
+  }
+
+  50% {
+    transform: scale(1.4);
+    opacity: 0.65;
+  }
+
+  100% {
+    transform: scale(0.8);
+    opacity: 0.15;
+  }
+}
+
+.brain-pulse-delayed {
+  transform-origin: center;
+  transform-box: fill-box;
+  animation: brainPulseDelayed 3s ease-in-out infinite;
+  animation-delay: 1.2s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brain-pulse-delayed {
+    animation: none;
+  }
+}
+@keyframes brainFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.brain-float {
+  animation: brainFloat 5s ease-in-out infinite;
+}
+
+@keyframes brainDot {
+  0%,
+  100% {
+    transform: scale(0.8);
+    opacity: 0.3;
+  }
+
+  50% {
+    transform: scale(1.8);
+    opacity: 1;
+  }
+}
+
+.brain-dot {
+  animation: brainDot 2.5s ease-in-out infinite;
+}
+
+.brain-dot-delayed {
+  animation: brainDot 2.5s ease-in-out infinite;
+  animation-delay: 1.2s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brain-float,
+  .brain-dot,
+  .brain-dot-delayed {
+    animation: none;
+  }
+}
+@keyframes brainFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.brain-float {
+  animation: brainFloat 5s ease-in-out infinite;
+}
+
+@keyframes brainPulse {
+  0%,
+  100% {
+    transform: scale(0.8);
+    opacity: 0.2;
+  }
+
+  50% {
+    transform: scale(1.8);
+    opacity: 1;
+  }
+}
+
+.brain-pulse {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: brainPulse 2.5s ease-in-out infinite;
+}
+
+.brain-pulse-delayed {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: brainPulse 2.5s ease-in-out infinite;
+  animation-delay: 1.2s;
+}
+
+.brain-glow {
+  filter:
+    drop-shadow(0 0 6px #35C9FF)
+    drop-shadow(0 0 18px #35C9FF)
+    drop-shadow(0 0 35px rgba(53, 201, 255, 0.7));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brain-float,
+  .brain-pulse,
+  .brain-pulse-delayed {
+    animation: none;
+  }
+}
+@keyframes presenceFade {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.presence-fade {
+  animation: presenceFade 0.8s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .presence-fade {
+    animation: none;
+  }
+}

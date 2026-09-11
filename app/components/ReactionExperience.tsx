@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 const options = {
   reagir: {
@@ -21,7 +21,20 @@ export default function ReactionExperience() {
   const [selected, setSelected] =
     useState<keyof typeof options>("perceber");
 
+  const resultRef = useRef<HTMLDivElement>(null);
+
   const currentOption = options[selected];
+
+  const handleSelect = (option: keyof typeof options) => {
+    setSelected(option);
+
+    setTimeout(() => {
+      resultRef.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+    }, 100);
+  };
 
   return (
     <section className="bg-[#315C72] px-6 py-32 text-white">
@@ -46,11 +59,11 @@ export default function ReactionExperience() {
         </div>
 
         {/* Opções */}
-        <div className="mt-16 grid gap-6 md:grid-cols-3">
+        <div className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-3">
 
           {/* Reagir */}
           <button
-            onClick={() => setSelected("reagir")}
+            onClick={() => handleSelect("reagir")}
             className={`rounded-3xl border p-8 text-left transition-all duration-300 ${
               selected === "reagir"
                 ? "border-white bg-white text-[#315C72] shadow-xl"
@@ -74,7 +87,7 @@ export default function ReactionExperience() {
 
           {/* Evitar */}
           <button
-            onClick={() => setSelected("evitar")}
+            onClick={() => handleSelect("evitar")}
             className={`rounded-3xl border p-8 text-left transition-all duration-300 ${
               selected === "evitar"
                 ? "border-white bg-white text-[#315C72] shadow-xl"
@@ -98,7 +111,7 @@ export default function ReactionExperience() {
 
           {/* Perceber */}
           <button
-            onClick={() => setSelected("perceber")}
+            onClick={() => handleSelect("perceber")}
             className={`rounded-3xl border p-8 text-left transition-all duration-300 ${
               selected === "perceber"
                 ? "border-white bg-white text-[#315C72] shadow-xl"
@@ -123,8 +136,20 @@ export default function ReactionExperience() {
         </div>
 
         {/* Resultado */}
-        <div className="mt-10 rounded-3xl bg-white p-8 text-[#263238] transition-all duration-300 md:p-12">
-
+        <div
+          ref={resultRef}
+          className="
+            mt-5
+            rounded-3xl
+            bg-white
+            p-6
+            text-[#263238]
+            transition-all
+            duration-300
+            md:mt-10
+            md:p-12
+          "
+        >
           <p className="text-sm font-medium uppercase tracking-[0.2em] text-[#4F7563]">
             {currentOption.title}
           </p>
@@ -132,7 +157,6 @@ export default function ReactionExperience() {
           <p className="mt-5 max-w-3xl text-xl leading-8 md:text-2xl">
             {currentOption.text}
           </p>
-
         </div>
 
       </div>
