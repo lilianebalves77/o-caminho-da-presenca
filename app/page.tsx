@@ -33,7 +33,7 @@ export default function Home() {
       O futuro ainda não aconteceu.
       <br />
       <span className="font-medium text-[#315C72]">
-        A vida acontece aqui.
+        A vida acontece aqui e agora.
       </span>
     </h1>
 
@@ -225,16 +225,15 @@ export default function Home() {
           </p>
 
           <p className="font-medium text-[#315C72]">
-            Entre conhecimento, emoção e comportamento existe um espaço de
-            consciência — e é nesse espaço que o Presença convida você a
-            observar, compreender e escolher.
+           Entre conhecimento, emoção e comportamento existe um espaço de consciência — e é nesse espaço que a presença convida você a observar, compreender e escolher.
           </p>
 
         </div>
       </div>
 
-      {/* Espaço para o cérebro */}
-      <div className="flex min-h-[320px] items-center justify-center rounded-3xl bg-[#F7F8F5]">
+      ```tsx
+{/* Espaço para o cérebro */}
+<div className="flex min-h-[320px] items-center justify-center rounded-3xl bg-[#F7F8F5]">
   <BrainVisual />
 </div>
 
@@ -243,7 +242,7 @@ export default function Home() {
   </div>
 </section>
 
-{/* ENCERRAMENTO */}
+{/* ENCERRAMENTO
 <section className="bg-[#F7F8F5] px-6 py-32">
   <div className="mx-auto max-w-3xl text-center">
 
@@ -267,6 +266,7 @@ export default function Home() {
 
   </div>
 </section>
+*/}
 
 </main>
   );
